@@ -10,7 +10,6 @@ public class Item : MonoBehaviour
     public virtual void Use(PickUpItem pui)
     {
         // consume bag
-
         _destroyFeedback?.Invoke();
         Destroy(gameObject, 3f);
     }

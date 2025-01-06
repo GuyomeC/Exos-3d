@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class HitEntity : MonoBehaviour
 {
-    [SerializeField] int _damage;
+    [SerializeField] public int _damage;
     private BoxCollider attackZone;
 
     private EntityHealth _entityHealth;
@@ -68,5 +68,10 @@ public class HitEntity : MonoBehaviour
                 break;
             }
         }
+    }
+
+    public void AddDamageAmount(int amount)
+    {
+        _damage += amount;
     }
 }
