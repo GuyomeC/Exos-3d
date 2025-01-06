@@ -58,5 +58,12 @@ public class AnimatorBinding : MonoBehaviour
     {
         _animator.SetTrigger("GetHit");
     }
+    
+    private void ActiveDeath()
+    {
+        _animator.SetTrigger("Death");
+    }
+
+
 
 }

@@ -1,6 +1,13 @@
 using UnityEngine;
 
-public class ActiveHit : HitEntity
+public class ActiveHit : MonoBehaviour
 {
-    [SerializeField] GameObject hitZone;
+    [SerializeField] HitEntity _hitEntity;
+
+    
+    private void ActiveAttack()
+    {
+
+        _hitEntity.PerformAttack();
+    }
 }

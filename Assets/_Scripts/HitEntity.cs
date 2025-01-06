@@ -8,6 +8,9 @@ public class HitEntity : MonoBehaviour
     [SerializeField] int _damage;
     private BoxCollider attackZone;
 
+    private EntityHealth _entityHealth;
+
+
     public event Action OnHit;
 
 
@@ -38,7 +41,7 @@ public class HitEntity : MonoBehaviour
         }
     }
 
-    protected virtual void PerformAttack()
+    public void PerformAttack()
     {
         if (attackZone == null)
         {
@@ -51,6 +54,12 @@ public class HitEntity : MonoBehaviour
 
         foreach (Collider hit in hits)
         {
+
+            if (hit.gameObject.layer == LayerMask.NameToLayer("PickUp"))
+            {
+                continue; // Ignore le joueur lui-même
+            }
+
             EntityHealth entityHealth = hit.GetComponentInParent<EntityHealth>();
             if (entityHealth != null)
             {
