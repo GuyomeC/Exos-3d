@@ -35,6 +35,8 @@ public class AnimatorBinding : MonoBehaviour
 
     private void OnDestroy()
     {
+        _move.OnStartMove -= _move_OnStartMove;
+        _move.OnStopMove -= _move_OnStopMove;
         _attack.action.started -= StartAttack;
         _hitEntity.OnHit -= ActiveHit;
     }
